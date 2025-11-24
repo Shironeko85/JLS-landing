@@ -1,3 +1,8 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'triforce';
+  src: url('https://use.typekit.net/gex1ymg.css') format('woff2');
+}
+
 
