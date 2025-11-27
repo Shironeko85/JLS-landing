@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="absolute w-screen bg-rose-950 h-20 flex items-center px-4 z-30">
+      <header className="absolute fixed w-screen bg-rose-950 h-20 flex items-center px-4 z-30">
         <div className="flex items-center">
           <div className="w-7 h-7 flex justify-center items-center rounded-full bg-neutral-400">
             <img className="h-6 w-6" src="/img/Triforce.png" alt="logo" />
@@ -21,6 +21,7 @@ const Navbar = () => {
           <ul className="hidden md:flex gap-6 text-white mr-4">
             <li className="hover:underline">Inicio</li>
             <li className="hover:underline">Servicios</li>
+            <li className="hover:underline">Quienes somos</li>
             <li className="hover:underline">Contacto</li>
           </ul>
 
@@ -51,6 +52,7 @@ const Navbar = () => {
         >
           <a onClick={() => setOpen(false)} className="block px-4 py-2 hover:bg-gray-100 text-white" href="#">Inicio</a>
           <a onClick={() => setOpen(false)} className="block px-4 py-2 hover:bg-gray-100 text-white" href="#">Servicios</a>
+          <a onClick={() => setOpen(false)} className="block px-4 py-2 hover:bg-gray-100 text-white" href="#">Quienes somos</a>
           <a onClick={() => setOpen(false)} className="block px-4 py-2 hover:bg-gray-100 text-white" href="#">Contacto</a>
         </div>
       </header>
