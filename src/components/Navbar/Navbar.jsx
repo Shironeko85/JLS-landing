@@ -19,10 +19,18 @@ const Navbar = () => {
         <nav className="ml-auto flex items-center">
           {/* Desktop links */}
           <ul className="hidden md:flex gap-6 text-white mr-4">
-            <li className="hover:underline">Inicio</li>
-            <li className="hover:underline">Servicios</li>
-            <li className="hover:underline">Quienes somos</li>
-            <li className="hover:underline">Contacto</li>
+            <div className="p-2 flex items-center rounded-full bg-white/5 hover:bg-white/20 cursor-pointer">
+              <li>Inicio</li>
+            </div>
+            <div className="p-2 flex items-center rounded-full bg-white/5 hover:bg-white/20 cursor-pointer">
+              <li>Servicios</li>
+            </div>
+            <div className="p-2 flex items-center rounded-full bg-white/5 hover:bg-white/20 cursor-pointer">
+              <li>Quienes somos</li>
+            </div>
+            <div className="p-2 flex items-center rounded-full bg-white/5 hover:bg-white/20 cursor-pointer">
+              <li>Contacto</li>
+            </div>
           </ul>
 
           {/* Hamburger button */}
