@@ -2,6 +2,7 @@
 "use client"
 
 import React, { useState } from "react"
+import { motion } from "motion/react"
 
 const Navbar = () => {
   const [open, setOpen] = useState(false)
@@ -10,7 +11,7 @@ const Navbar = () => {
     <>
       <header className="absolute fixed w-screen bg-rose-950 h-20 flex items-center px-4 z-30">
         <div className="flex items-center">
-          <div className="w-7 h-7 flex justify-center items-center rounded-full bg-neutral-400">
+          <div className="w-8 h-8 flex justify-center items-center rounded-full bg-neutral-400">
             <img className="h-6 w-6" src="/img/Triforce.png" alt="logo" />
           </div>
           <div className="text-white text-lg ml-2">Triforce Solutions</div>
@@ -19,18 +20,46 @@ const Navbar = () => {
         <nav className="ml-auto flex items-center">
           {/* Desktop links */}
           <ul className="hidden md:flex gap-6 text-white mr-4">
-            <div className="p-2 flex items-center rounded-full bg-white/5 hover:bg-white/20 cursor-pointer">
+            <motion.div
+            whileHover={{
+              scale: 1.1,
+              transition: {
+                duration: 0.1,
+              },
+            }}
+            className="p-2 flex items-center rounded-full bg-white/5 hover:bg-white/20 cursor-pointer">
               <li>Inicio</li>
-            </div>
-            <div className="p-2 flex items-center rounded-full bg-white/5 hover:bg-white/20 cursor-pointer">
+            </motion.div>
+            <motion.div
+            whileHover={{
+              scale: 1.1,
+              transition: {
+                duration: 0.1,
+              },
+            }}
+            className="p-2 flex items-center rounded-full bg-white/5 hover:bg-white/20 cursor-pointer">
               <li>Servicios</li>
-            </div>
-            <div className="p-2 flex items-center rounded-full bg-white/5 hover:bg-white/20 cursor-pointer">
+            </motion.div>
+            <motion.div
+            whileHover={{
+              scale: 1.1,
+              transition: {
+                duration: 0.1,
+              },
+            }}
+            className="p-2 flex items-center rounded-full bg-white/5 hover:bg-white/20 cursor-pointer">
               <li>Quienes somos</li>
-            </div>
-            <div className="p-2 flex items-center rounded-full bg-white/5 hover:bg-white/20 cursor-pointer">
+            </motion.div>
+            <motion.div
+            whileHover={{
+              scale: 1.1,
+              transition: {
+                duration: 0.1,
+              },
+            }}
+            className="p-2 flex items-center rounded-full bg-white/5 hover:bg-white/20 cursor-pointer">
               <li>Contacto</li>
-            </div>
+            </motion.div>
           </ul>
 
           {/* Hamburger button */}
