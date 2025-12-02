@@ -14,7 +14,7 @@ const Navbar = () => {
           <div className="w-8 h-8 flex justify-center items-center rounded-full bg-neutral-400">
             <img className="h-6 w-6" src="/img/Triforce.png" alt="logo" />
           </div>
-          <div className="text-white text-lg ml-2">Triforce Solutions</div>
+          <div className="text-white text-lg font-centrifuge ml-2">Triforce Solutions</div>
         </div>
 
         <nav className="ml-auto flex items-center">
