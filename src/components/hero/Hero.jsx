@@ -16,7 +16,7 @@ const Hero = ({ images = ["/img/hero-1.jpeg", "/img/hero-2.jpg", "/img/hero-3.jp
 
   return (
     <>
-      <div className="h-screen w-screen flex relative overflow-hidden">
+      <div className="Hero h-screen w-screen flex relative overflow-hidden">
         {images.map((src, idx) => (
           <img
             key={src + idx}

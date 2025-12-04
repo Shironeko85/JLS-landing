@@ -1,2 +1,5 @@
 @import "tailwindcss";
 
+@theme {
+    --color-marine: #1B1E4E;
+  }

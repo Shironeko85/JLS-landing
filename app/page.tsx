@@ -1,13 +1,13 @@
-import Navbar from "../src/components/Navbar/Navbar"
-import Hero from "../src/components/Hero/Hero"
-import Services from "../src/components/Services/Services"
+import Navbar from "../src/components/navbar/Navbar"
+import Hero from "../src/components/hero/Hero"
+import Service from "../src/components/service/Service"
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <Hero />
-      <Services />
+      <Service />
     </>
   );
 }
