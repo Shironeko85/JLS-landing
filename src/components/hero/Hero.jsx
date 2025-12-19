@@ -2,6 +2,8 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
+import {motion} from "motion/react"
+
 
 const Hero = ({ images = ["/img/hero-1.jpeg", "/img/hero-2.jpg", "/img/hero-3.jpg"], alt = "Equipo trabajando" }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -13,10 +15,20 @@ const Hero = ({ images = ["/img/hero-1.jpeg", "/img/hero-2.jpg", "/img/hero-3.jp
 
     return () => clearInterval(id)
   }, [images.length])
-
+  
   return (
     <>
-      <div className="Hero h-screen w-screen flex relative overflow-hidden">
+      <div className="flex items-center justify-center relative w-screen h-screen overflow-hidden">
+        <motion.img
+          initial={{ scale: 1.3, rotate: 7 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ duration: 15 }}
+          src="/img/heroo.jpg" className="h-screen w-screen object-cover" alt=""></motion.img><motion.img/>
+        <div className="absolute h-full w-full flex items-center justify-center bg-black/60 ">
+          <h1 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl font-bold">La solución tecnológica a tu medida</h1>
+        </div>
+      </div>
+      {/*<div className="Hero h-screen w-screen flex relative overflow-hidden">
         {images.map((src, idx) => (
           <img
             key={src + idx}
@@ -24,10 +36,9 @@ const Hero = ({ images = ["/img/hero-1.jpeg", "/img/hero-2.jpg", "/img/hero-3.jp
             alt={alt}
             className={`absolute inset-0 w-screen h-screen object-cover transition-opacity duration-1000 ease-in-out ${idx === currentIndex ? "opacity-100" : "opacity-0"}`}
           />
-        ))}
+        ))}*/}
 
-        <h1 className="absolute bottom-8 right-7 text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl font-bold">La solución tecnológica a tu medida</h1>
-      </div>
+      {/*</div>*/}
     </>
   )
 }

@@ -3,8 +3,9 @@
 const Service = () => {
   return (
     <>
-        <div className="w-screen bg-marine h-screen flex items-center justify-center" >
-            <h1 className="p-10 text-white text-sm text-center font-bold ml-3 mr-3 place-self-start">
+        <div className="w-screen flex flex-col sm:flex-row" >
+          <div className="bg-marine sm:w-1/2">
+            <h1 className="p-10 text-white h-screen text-sm text-center font-bold ml-3 mr-3">
               Somos un equipo especializado en rendimiento y confiabilidad.
               <br />
               <br />
@@ -12,6 +13,8 @@ const Service = () => {
               como:
               <ul>
                 <li>Desarrollo de software</li>
+                <li>Mantenimiento informático y de redes</li>
+                <li>Sistemas de cámaras</li>
                 <li>Sistemas de alarmas</li>
                 <li>Automatización industrial</li>
                 <li>PLC</li>
@@ -37,6 +40,10 @@ const Service = () => {
               Y en un mundo donde todo está diseñado para fallar, elegimos el camino disruptivo:
               <br />
               apostamos por tu tranquilidad, por soluciones que perduran y por un servicio hecho con respeto hacia quienes confían en nosotros.</h1>
+          </div>
+          <div className="bg-black h-screen sm:w-1/2 text-white object-cover">
+              <img className="w-screen h-screen object-cover " src="/img/code.jpg" alt="Codigo de programación" />
+          </div>
         </div>
     </>
   )

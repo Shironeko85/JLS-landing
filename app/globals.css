@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-    --color-marine: #1B1E4E;
-  }
+  --color-marine: #1B1E4E;
+  --font-asimovian: 'asimovian', sans-serif;
+  --font-sans: var(--font-asimovian), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.nav-text {
+  font-family: centrifuge, sans-serif;
+  font-weight: 700;
+  font-style: normal;}
+
+@font-face {
+  font-family: "asimovian";
+  src: url('/fonts/asimovian.ttf') format('.woff2');
+}

@@ -1,63 +1,83 @@
 
 "use client"
 
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { motion } from "motion/react"
+const menuVariants = {
+  initial: {
+    x: 150,
+    y: -50,
+    opacity: 0,
+    scale: 0.7
+  },
+  animate: {
+    x: 0,
+    y: 0,
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 3,
+      ease: "easeInOut",
+      staggerChildren: 1,
+    },
+  },
+};
 
 const Navbar = () => {
   const [open, setOpen] = useState(false)
   const [scroll, setScroll] = useState(false)
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 1) {
+        setScroll(true)
+      } else {
+        setScroll(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <>
-      <header className="absolute fixed w-screen bg-rose-950 h-20 flex items-center px-4 z-30">
+      <header className={`absolute fixed w-screen h-18 flex items-center px-4 z-30 transition-all duration-300 ${scroll ? 'bg-rose-950/80 backdrop-blur-sm' : 'bg-rose-950'}`}>
         <div className="flex items-center">
           <div className="w-8 h-8 flex justify-center items-center rounded-full bg-neutral-400">
             <img className="h-6 w-6" src="/img/Triforce.png" alt="logo" />
           </div>
-          <div className="text-white text-lg font-centrifuge ml-3">HyperTech</div>
+          <motion.div
+          className="nav-text text-white text-lg ml-3">HyperTech</motion.div>
         </div>
 
-        <nav className="ml-auto flex items-center">
+        <motion.nav
+          variants={menuVariants}
+          initial="initial"
+          animate="animate" 
+          className="hTitle" className="ml-auto flex items-center">
           {/* Desktop links */}
           <ul className="hidden md:flex gap-6 text-white mr-4">
             <motion.div
-            whileHover={{
-              scale: 1.1,
-              transition: {
-                duration: 0.1,
-              },
-            }}
+            variants={menuVariants}
             className="p-2 flex items-center rounded bg-white/5 hover:bg-white/20 cursor-pointer">
-              <a href="#Hero">Inicio</a>
+              <a>Inicio</a>
             </motion.div>
             <motion.div
-            whileHover={{
-              scale: 1.1,
-              transition: {
-                duration: 0.1,
-              },
-            }}
+            variants={menuVariants}
             className="p-2 flex items-center rounded bg-white/5 hover:bg-white/20 cursor-pointer">
               <a>Servicios</a>
             </motion.div>
             <motion.div
-            whileHover={{
-              scale: 1.1,
-              transition: {
-                duration: 0.1,
-              },
-            }}
+            variants={menuVariants}
             className="p-2 flex items-center rounded bg-white/5 hover:bg-white/20 cursor-pointer">
               <a>Quienes somos</a>
             </motion.div>
             <motion.div
-            whileHover={{
-              scale: 1.1,
-              transition: {
-                duration: 0.1,
-              },
-            }}
+            variants={menuVariants}
             className="p-2 flex items-center rounded bg-white/5 hover:bg-white/20 cursor-pointer">
               <a>Contacto</a>
             </motion.div>
@@ -79,7 +99,7 @@ const Navbar = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
             </svg>
           </button>
-        </nav>
+        </motion.nav>
 
         {/* Mobile dropdown */}
         <div
